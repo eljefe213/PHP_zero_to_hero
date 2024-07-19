@@ -1,4 +1,9 @@
-<?php require 'header.php'; ?>
+
+<?php 
+$title = 'Nous contacter';
+require 'header.php'; 
+
+?>
 
 <h2>Contact us</h2>
 

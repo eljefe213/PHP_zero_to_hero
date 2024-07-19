@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>
-        <?php if (isset($title)) { ?>
-            <?php echo $title; ?>
-        <?php } else { ?>
+        <?php if (isset($title)) : ?>
+            <?= $title ?>
+        <?php  else : ?>
             Website
-        <?php } ?>
+        <?php endif ?>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -39,11 +40,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.php">Home</a>
+            <li class="nav-item ">
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/index.php') : ?> active<?php endif ?>" aria-current="page" href="/index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact.php">Contact</a>
+            <li class="nav-item ">
+              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/contact.php') : ?> active<?php endif ?>" href="/contact.php">Contact</a>
             </li>
           </ul>
         </div>
