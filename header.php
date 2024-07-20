@@ -1,4 +1,6 @@
-
+<?php
+  require_once 'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,12 +42,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item ">
-              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/index.php') : ?> active<?php endif ?>" aria-current="page" href="/index.php">Home</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === '/contact.php') : ?> active<?php endif ?>" href="/contact.php">Contact</a>
-            </li>
+            <?php 
+            $class = 'nav-link';
+            require('menu.php'); 
+            ?>
           </ul>
         </div>
       </div>
