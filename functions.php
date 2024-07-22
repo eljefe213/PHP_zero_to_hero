@@ -18,3 +18,14 @@ function nav_menu (string $linkClass = '') : string
         nav_link('/index.php', 'Home', $linkClass) .
         nav_link('/contact.php', 'Contact', $linkClass);
 }
+
+function checkbox (string $name, string $value, array $data): string
+{
+    $attribute = '';
+    if (isset($data[$name]) && in_array($value, $data[$name])) {
+        $attribute .= 'checked';
+    }
+    return <<<HTML
+    <input type="checkbox" name="{$name}[]" value="$value">
+HTML;
+}
