@@ -44,3 +44,6 @@ function dump($variable) {
     var_dump($variable);
     echo '</pre>';
 }
+function slots_html (array $slots) {
+    
+}
