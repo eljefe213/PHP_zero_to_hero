@@ -29,3 +29,18 @@ function checkbox (string $name, string $value, array $data): string
     <input type="checkbox" name="{$name}[]" value="$value">
 HTML;
 }
+function radio (string $name, string $value, array $data): string
+{
+    $attribute = '';
+    if (isset($data[$name]) && $value === $data[$name]) {
+        $attribute .= 'checked';
+    }
+    return <<<HTML
+    <input type="radio" name="{$name}" value="$value">
+HTML;
+}
+function dump($variable) {
+    echo '<pre>';
+    var_dump($variable);
+    echo '</pre>';
+}
