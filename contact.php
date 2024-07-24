@@ -1,6 +1,7 @@
 
 <?php 
 $title = 'Nous contacter';
+require_once 'functions.php';
 require_once 'config.php';
 $slots = slots_html(SLOTS);
 require 'header.php'; 
@@ -13,7 +14,7 @@ require 'header.php';
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ullam. Dicta minima alias aperiam ut vero!</p>
     </div>
     <div class="col-md-4">
-
+        <?= $slots ?>
     </div>
 </div>
 

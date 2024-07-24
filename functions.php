@@ -45,5 +45,9 @@ function dump($variable) {
     echo '</pre>';
 }
 function slots_html (array $slots) {
-    
+    $sentences = [];
+    foreach($slots as $slot) {
+        $sentences[] = "{$slots[0]}h to {$slots[1]}h ";
+    }
+    //dump($sentences);
 }
