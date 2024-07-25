@@ -3,7 +3,11 @@
 $title = 'Nous contacter';
 require_once 'functions.php';
 require_once 'config.php';
-$slots = slots_html(SLOTS);
+date_default_timezone_set('Europe/Paris');
+$hour = (int)date('G');
+$slots = SLOTS[date('N') - 1];
+//$slots = slots_html(SLOTS);
+$open = in_slots($hour, $slots);
 require 'header.php'; 
 
 ?>
@@ -14,7 +18,24 @@ require 'header.php';
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ullam. Dicta minima alias aperiam ut vero!</p>
     </div>
     <div class="col-md-4">
-        <?= $slots ?>
+        <h2>Opening hours</h2>
+        <?php if ($open): ?>
+        <div class="alert alert-success">
+            The store is open
+        </div>
+        <?php else: ?>
+        <div class="alert alert-danger">
+            The store is close
+        </div>
+        <?php endif ?>
+        <ul>
+            <?php foreach(DAYS as $k => $day): ?>
+                <li <?php if ($k + 1 === (int)date('N')): ?> style="color: green" <?php endif ?>>
+                    <strong><?= $day ?></strong> : 
+                    <?= slots_html(SLOTS[$k]); ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </div>
 

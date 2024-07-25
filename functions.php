@@ -45,9 +45,24 @@ function dump($variable) {
     echo '</pre>';
 }
 function slots_html (array $slots) {
+    if (empty($slots)) {
+        return 'Close';
+    }
     $sentences = [];
     foreach($slots as $slot) {
-        $sentences[] = "{$slots[0]}h to {$slots[1]}h ";
+        $sentences[] = "<strong>{$slot[0]}h</strong> to <strong>{$slot[1]}h</strong>";
     }
     //dump($sentences);
+    return 'Open from ' . implode(' and ', $sentences);
+}
+function in_slots (int $hour, array $slots): bool 
+{
+    foreach ($slots as $slot) {
+        $start = $slot[0];
+        $end = $slot[1];
+        if ($hour >= $start && $hour <= $end) {
+            return true;
+        }
+    }
+    return false;
 }
