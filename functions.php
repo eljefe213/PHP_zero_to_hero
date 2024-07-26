@@ -60,7 +60,7 @@ function in_slots (int $hour, array $slots): bool
     foreach ($slots as $slot) {
         $start = $slot[0];
         $end = $slot[1];
-        if ($hour >= $start && $hour <= $end) {
+        if ($hour >= $start && $hour < $end) {
             return true;
         }
     }

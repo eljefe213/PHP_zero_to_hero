@@ -8,6 +8,10 @@ $hour = (int)date('G');
 $slots = SLOTS[date('N') - 1];
 //$slots = slots_html(SLOTS);
 $open = in_slots($hour, $slots);
+$color = 'green';
+if (!$open) {
+    $color = 'red';
+}
 require 'header.php'; 
 
 ?>
@@ -30,7 +34,7 @@ require 'header.php';
         <?php endif ?>
         <ul>
             <?php foreach(DAYS as $k => $day): ?>
-                <li <?php if ($k + 1 === (int)date('N')): ?> style="color: green" <?php endif ?>>
+                <li <?php if ($k + 1 === (int)date('N')): ?> style="<?= $color; ?>" <?php endif ?>>
                     <strong><?= $day ?></strong> : 
                     <?= slots_html(SLOTS[$k]); ?>
                 </li>
