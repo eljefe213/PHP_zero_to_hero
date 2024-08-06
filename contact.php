@@ -1,17 +1,15 @@
 
 <?php 
-$title = 'Nous contacter';
+$title = 'Contact us';
 require_once 'functions.php';
 require_once 'config.php';
 date_default_timezone_set('Europe/Paris');
-$hour = (int)date('G');
-$slots = SLOTS[date('N') - 1];
+$hour = (int)($_GET['hour'] ?? date('G'));
+$day = (int)($_GET['day'] ?? date('N') - 1);
+$slots = SLOTS[$day];
 //$slots = slots_html(SLOTS);
 $open = in_slots($hour, $slots);
-$color = 'green';
-if (!$open) {
-    $color = 'red';
-}
+$color = $open ? 'green' : 'red';
 require 'header.php'; 
 
 ?>
@@ -25,16 +23,27 @@ require 'header.php';
         <h2>Opening hours</h2>
         <?php if ($open): ?>
         <div class="alert alert-success">
-            The store is open
+            The store will be open
         </div>
         <?php else: ?>
         <div class="alert alert-danger">
-            The store is close
+            The store will be close
         </div>
         <?php endif ?>
+
+        <form action="" method="GET">
+            <div class="form-group">
+                <?= select('day', $day, DAYS) ?>
+            </div>
+            <div class="form-group">
+                    <input class="form-control" type="number" name="hour" value="<?= $hour ?>"> 
+            </div>
+            <button class="btn btn-primary" type="submit">Check if the store is open</button>        
+        </form>
+        
         <ul>
             <?php foreach(DAYS as $k => $day): ?>
-                <li <?php if ($k + 1 === (int)date('N')): ?> style="<?= $color; ?>" <?php endif ?>>
+                <li>
                     <strong><?= $day ?></strong> : 
                     <?= slots_html(SLOTS[$k]); ?>
                 </li>
