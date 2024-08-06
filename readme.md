@@ -1,0 +1,1 @@
+This file is a documentation for the entire project 
