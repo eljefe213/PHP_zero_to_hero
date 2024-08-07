@@ -1,1 +1,1 @@
-This file is a documentation for the entire project 
+this file will contain the entire documentation on the differents parts of the PHP Project 
