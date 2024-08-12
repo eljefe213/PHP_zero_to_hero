@@ -16,6 +16,7 @@ function nav_menu (string $linkClass = '') : string
 {
     return 
         nav_link('/index.php', 'Home', $linkClass) .
+        nav_link('/menu.php', 'Menu', $linkClass) .
         nav_link('/contact.php', 'Contact', $linkClass);
 }
 

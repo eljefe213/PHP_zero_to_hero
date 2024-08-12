@@ -1,8 +1,8 @@
 
 <?php 
 $title = 'Contact us';
-require_once 'functions.php';
-require_once 'config.php';
+require_once './functions.php';
+require_once './data/config.php';
 date_default_timezone_set('Europe/Paris');
 $hour = (int)($_GET['hour'] ?? date('G'));
 $day = (int)($_GET['day'] ?? date('N') - 1);
@@ -10,7 +10,7 @@ $slots = SLOTS[$day];
 //$slots = slots_html(SLOTS);
 $open = in_slots($hour, $slots);
 $color = $open ? 'green' : 'red';
-require 'header.php'; 
+require './elements/header.php'; 
 
 ?>
 
@@ -54,4 +54,4 @@ require 'header.php';
 
 
 
-<?php require 'footer.php'; ?>
+<?php require './elements/footer.php'; ?>
