@@ -16,10 +16,11 @@ This repository contains various exercises and examples to help you build and st
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+To get started with this project, follow these simple steps:
 
 1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/your-username/php-zero-to-hero.git
    cd php-zero-to-hero
+   
