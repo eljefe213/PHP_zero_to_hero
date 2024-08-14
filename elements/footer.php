@@ -9,9 +9,7 @@
   <div class="col-md-4">
     <h5>Navigation</h5>
     <ul class="list-unstyled text-small">
-      <?php 
-      $class = '';
-      require('menu.php'); ?>
+      <?= nav_menu('nav-link') ?>
     </ul>
   </div>
 </div>
@@ -23,4 +21,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-QnZ1B0LPt2MlRex2I1OR5ti/Tu4F5YlplBz3Jy0FF3J66Y/tEV5wi9aTgaRUzRYm" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
