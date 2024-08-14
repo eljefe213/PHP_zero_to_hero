@@ -1,6 +1,6 @@
 <?php
 $title = "Our menu";
-require 'elements/header.php'; 
+require 'elements/header.php';
 ?>
 
 <h1>Menu</h1>
