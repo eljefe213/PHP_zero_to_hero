@@ -5,7 +5,14 @@
 </div> <!-- /container -->
 <div class="row">
   <div class="col-md-4"></div>
-  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <form action="/newsletter.php" method="post" class="form-inline">
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Entre your email" class="form-control" value="<?= isset($email) ? htmlentities($email) : '' ?>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
   <div class="col-md-4">
     <h5>Navigation</h5>
     <ul class="list-unstyled text-small">
