@@ -1,5 +1,9 @@
 <?php
 $name = null;
+if (!empty($_GET['action']) && $_GET['action'] === 'deconnexion') {
+    unset($_COOKIE['user']);
+    setcookie('user', '', time() - 10);
+}
 if (!empty($_COOKIE['user'])) {
     $name = $_COOKIE['user'];
 }
@@ -12,6 +16,7 @@ require 'elements/header.php';
 
 <?php if ($name): ?>
     <h1>Hello <?= htmlentities($name) ?></h1>
+    <a href="profil.php?action=deconnexion">Deconnexion</a>
 <?php else: ?>
     <form action="" method="post">
         <div class="form-group">
