@@ -1,23 +1,4 @@
 <?php
-// $name = null;
-// if (!empty($_GET['action']) && $_GET['action'] === 'deconnexion') {
-//     unset($_COOKIE['user']);
-//     setcookie('user', '', time() - 10);
-// }
-// if (!empty($_COOKIE['user'])) {
-//     $name = $_COOKIE['user'];
-// }
-// if (!empty($_POST['name'])) {
-//     setcookie('user', $_POST['name']);
-//     $name = $_POST['name'];
-// }
-$user = [
-    'lastname' => 'John',
-    'name' => 'Doe',
-    'age' => 18
-];
-var_dump(serialize($user));
- die();
 require 'elements/header.php';
 ?>
 
