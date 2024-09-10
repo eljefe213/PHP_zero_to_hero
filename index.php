@@ -1,6 +1,5 @@
 <?php
 session_start();
-unset($_SESSION['role']);
 $title = "Home page";
 require 'elements/header.php';
 ?>

@@ -16,10 +16,6 @@ require './elements/header.php';
 
 <div class="row">
     <div class="col-md-8">
-        <h2>Debug</h2>
-        <pre>
-            <?= var_dump($_SESSION); ?>
-        </pre>
         <h2>Contact us</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, ullam. Dicta minima alias aperiam ut vero!</p>
     </div>
