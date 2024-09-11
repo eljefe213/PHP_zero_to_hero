@@ -4,7 +4,14 @@
 
 </div> <!-- /container -->
 <div class="row">
-  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <?php
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'counter.php';
+    add_view();
+    $views = number_view();
+    ?>
+    There is <?= number_view() ?> view<?php if ($views > 1) : ?>s<?php endif; ?> on the site
+  </div>
   <div class="col-md-4">
     <form action="/newsletter.php" method="post" class="form-inline">
       <div class="form-group">
