@@ -16,7 +16,7 @@ This repository contains various exercises and examples to help you build and st
 
 ## Getting Started
 
-To get started with this project, follow these simple steps and enjoy:
+To get started with this project, follow these simple steps and enjoy it:
 
 1. **Clone the repository:**
 
