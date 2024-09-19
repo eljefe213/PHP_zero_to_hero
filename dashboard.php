@@ -1,4 +1,5 @@
 <?php
+// dashboard variables 
 require 'functions/counter.php';
 $total = number_view();
 $year = (int)date('Y');
