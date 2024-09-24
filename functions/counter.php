@@ -23,3 +23,11 @@ function number_view(): string
     $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter';
     return file_get_contents($file);
 }
+
+function number_view_monthly(int $year, int $months)
+{
+    $months = str_pad($months, 2, '0', STR_PAD_LEFT);
+    $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter-' . $year . '-' . $months . '-' . '*';
+    var_dump(glob($file));
+    exit;
+}
