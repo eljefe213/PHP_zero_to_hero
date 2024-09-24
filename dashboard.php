@@ -5,6 +5,7 @@ $selected_year = empty($_GET['year']) ? null : (int)$_GET['year'];
 $selected_month = empty($_GET['month']) ? null : (int)$_GET['month'];
 if ($selected_year && $selected_month) {
     $total = number_view_monthly($selected_year, $selected_month);
+    $details = number_view_monthly_details($selected_year, $selected_month);
 } else {
     $total = number_view();
 }
@@ -42,12 +43,31 @@ require 'elements/header.php';
         </div>
     </div>
     <div class="col-md-8">
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-body">
                 <strong style="font-size: 3em;"><?= $total ?></strong><br>
                 Total visit<?= $total > 1 ? 's' : '' ?>
             </div>
         </div>
+        <?php if (isset($details)) : ?>
+            <h2>details of visits for the month</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Number of visits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($details as $detail) : ?>
+                        <tr>
+                            <td><?= $detail['day'] ?></td>
+                            <td><?= $detail['visits'] ?> visit<?= $detail['visits'] > 1 ? 's' : '' ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        <?php endif ?>
     </div>
 </div>
 
