@@ -1,4 +1,5 @@
 <?php
+require 'functions/auth.php';
 require 'functions/counter.php';
 $year = (int)date('Y');
 $selected_year = empty($_GET['year']) ? null : (int)$_GET['year'];
