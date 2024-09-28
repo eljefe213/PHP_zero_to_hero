@@ -14,12 +14,12 @@ if (!empty($_POST)) {
     }
         
 }
-require 'functions/auth.php';
+require_once 'functions/auth.php';
 if (is_connected()) {
     header('Location: dahsboard.php');
     exit;
 }
-require 'elements/header.php';
+require_once 'elements/header.php';
 ?>
 <?php if ($error): ?>
     <div class="alert alert-danger">
@@ -35,4 +35,4 @@ require 'elements/header.php';
     </div>
     <button type="submit" class="btn btn-primary">Connexion</button>
 </form>
-<?php require 'elements/footer.php'; ?>
+<?php require_once 'elements/footer.php'; ?>
