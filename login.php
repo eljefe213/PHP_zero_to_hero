@@ -14,6 +14,11 @@ if (!empty($_POST)) {
     }
         
 }
+require 'functions/auth.php';
+if (is_connected()) {
+    header('Location: dahsboard.php');
+    exit;
+}
 require 'elements/header.php';
 ?>
 <?php if ($error): ?>

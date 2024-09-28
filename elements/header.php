@@ -45,6 +45,11 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
         <ul class="navbar-nav">
           <?= nav_menu('nav-link') ?>
         </ul>
+        <ul class="navbar-nav">
+          <?php if(is_connected()) : ?>
+            <li class="nav-item"><a href="logout.php">Logout</a></li>
+          <?php endif ?>
+        </ul>
       </div>
     </div>
   </nav>
