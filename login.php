@@ -1,12 +1,18 @@
 <?php
 $error = null;
-if (!empty($_POST['username']) && !empty($_POST['password'])) {
-    if ($_POST['username'] === 'John' && $_POST['password'] === 'Doe') {    
-        // Connect the user
-} else {
-        // Display an error
-        $error = 'Invalid username or password';
-}
+if (!empty($_POST)) {
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        $error = "All fields are required";
+    } elseif ($_POST['username'] === 'John' && $_POST['password'] === 'Doe') {
+        // connect the user 
+        session_start();
+        $_SESSION['connected'] = 1;
+        header('Location: dahsboard.php');  
+        exit;
+    } else {
+        $error = "Wrong username or password";
+    }
+        
 }
 require 'elements/header.php';
 ?>
