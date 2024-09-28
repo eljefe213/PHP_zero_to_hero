@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
         </ul>
         <ul class="navbar-nav">
           <?php if(is_connected()) : ?>
-            <li class="nav-item"><a href="logout.php">Logout</a></li>
+            <li class="nav-item"><a href="/logout.php">Logout</a></li>
           <?php endif ?>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 <?php
-require 'functions/auth.php';
+require_once 'functions/auth.php';
 connected_user();
-require 'functions/counter.php';
+require_once 'functions/counter.php';
 $year = (int)date('Y');
 $selected_year = empty($_GET['year']) ? null : (int)$_GET['year'];
 $selected_month = empty($_GET['month']) ? null : (int)$_GET['month'];
@@ -25,7 +25,7 @@ $months = [
     '11' => 'November',
     '12' => 'December'
 ];
-require 'elements/header.php';
+require_once 'elements/header.php';
 ?>
 <div class="row">
     <div class="col-md-4">
