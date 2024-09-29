@@ -28,10 +28,10 @@ require_once 'elements/header.php';
 <?php endif; ?>
 <form action="" method="post">
     <div class="form-group">
-        <input class="form-control" type="text" name="username" placeholder="Enter your username">
+        <input class="form-control" type="text" name="username" placeholder="Username">
     </div>
     <div class="form-group">
-        <input class="form-control" type="password" name="password" placeholder="Enter your password">
+        <input class="form-control" type="password" name="password" placeholder="Password">
     </div>
     <button type="submit" class="btn btn-primary">Connexion</button>
 </form>
