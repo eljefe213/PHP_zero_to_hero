@@ -7,7 +7,7 @@ if (!empty($_POST)) {
         // connect the user 
         session_start();
         $_SESSION['connected'] = 1;
-        header('Location: dahsboard.php');  
+        header('Location: dashboard.php');  
         exit;
     } else {
         $error = "Wrong username or password";
@@ -16,7 +16,7 @@ if (!empty($_POST)) {
 }
 require_once 'functions/auth.php';
 if (is_connected()) {
-    header('Location: dahsboard.php');
+    header('Location: dashboard.php');
     exit;
 }
 require_once 'elements/header.php';
