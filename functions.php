@@ -15,9 +15,9 @@ HTML;
 function nav_menu (string $linkClass = '') : string 
 {
     return 
-        nav_link('/index.php', 'Home', $linkClass) .
-        nav_link('/menu.php', 'Menu', $linkClass) .
-        nav_link('/contact.php', 'Contact', $linkClass);
+        nav_link(BASE_URL . '/index.php', 'Home', $linkClass) .
+        nav_link(BASE_URL . '/menu.php', 'Menu', $linkClass) .
+        nav_link(BASE_URL . '/contact.php', 'Contact', $linkClass);
 }
 
 function checkbox (string $name, string $value, array $data): string

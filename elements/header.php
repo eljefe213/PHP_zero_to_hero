@@ -1,4 +1,7 @@
 <?php
+if ( session_status() === PHP_SESSION_NONE ) {
+  session_start();
+}
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
 ?>
