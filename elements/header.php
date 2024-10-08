@@ -1,5 +1,9 @@
 <?php
+if ( session_status() === PHP_SESSION_NONE ) {
+  session_start();
+}
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +48,11 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <?= nav_menu('nav-link') ?>
+        </ul>
+        <ul class="navbar-nav">
+          <?php if(is_connected()) : ?>
+            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/logout.php">Logout</a></li>
+          <?php endif ?>
         </ul>
       </div>
     </div>
