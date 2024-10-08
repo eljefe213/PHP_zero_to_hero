@@ -1,18 +1,18 @@
 <?php
 $error = null;
+$password = '$2y$14$ewojS9nNW6zi2DzyKhISk.5AkR99bQb6oJQdRo/bdAtGmBt.NPzo6';
 if (!empty($_POST)) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "All fields are required";
-    } elseif ($_POST['username'] === 'John' && $_POST['password'] === 'Doe') {
+    } elseif ($_POST['username'] === 'John' && password_verify($_POST['password'], $password)) {
         // connect the user 
         session_start();
         $_SESSION['connected'] = 1;
-        header('Location: dashboard.php');  
+        header('Location: dashboard.php');
         exit;
     } else {
         $error = "Wrong username or password";
     }
-        
 }
 require_once 'functions/auth.php';
 if (is_connected()) {
