@@ -1,4 +1,4 @@
 <?php
 
 $date = new DateTime();
-var_dump($date);
+echo $date->format('d/m/Y H:i:s');
