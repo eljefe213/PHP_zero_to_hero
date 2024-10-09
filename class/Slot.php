@@ -13,6 +13,11 @@ class Slot
         $this->end = $end;
     }
 
+    public function toHTML(): string
+    {
+        return "<strong>{$this->start}h</strong> to <strong>{$this->end}h</strong>";
+    }
+
     public function includesHour(int $hour): bool
     {
         return $hour >= $this->start && $hour <= $this->end;
