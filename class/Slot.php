@@ -1,3 +1,7 @@
 <?php
 
-class Slot {}
+class Slot
+{
+    public $start;
+    public $end;
+}
