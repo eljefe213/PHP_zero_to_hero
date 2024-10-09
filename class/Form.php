@@ -2,7 +2,7 @@
 
 class Form
 {
-    function checkbox(string $name, string $value, array $data): string
+    public static function checkbox(string $name, string $value = null, array $data = []): string
     {
         $attribute = '';
         if (isset($data[$name]) && in_array($value, $data[$name])) {
