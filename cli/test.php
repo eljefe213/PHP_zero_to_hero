@@ -1,6 +1,4 @@
 <?php
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Slot.php';
-$slots = new Slot(9, 12);
-$slots2 = new Slot(14, 16);
+require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Form.php';
 
-echo $slots->toHTML();
+echo Form::checkbox('demo', 'Demo', []);
