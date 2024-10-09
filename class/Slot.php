@@ -12,4 +12,9 @@ class Slot
         $this->start = $start;
         $this->end = $end;
     }
+
+    public function includesHour(int $hour): bool
+    {
+        return $hour >= $this->start && $hour <= $this->end;
+    }
 }
