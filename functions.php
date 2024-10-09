@@ -1,8 +1,8 @@
-<?php 
-function nav_link (string $link, string $title, string $linkClass = ''): string
+<?php
+function nav_link(string $link, string $title, string $linkClass = ''): string
 {
     $class = 'nav-link';
-    if($_SERVER['SCRIPT_NAME'] === $link) {
+    if ($_SERVER['SCRIPT_NAME'] === $link) {
         $class .= ' active';
     }
     return <<<HTML
@@ -12,15 +12,15 @@ function nav_link (string $link, string $title, string $linkClass = ''): string
 HTML;
 }
 
-function nav_menu (string $linkClass = '') : string 
+function nav_menu(string $linkClass = ''): string
 {
-    return 
+    return
         nav_link(BASE_URL . '/index.php', 'Home', $linkClass) .
         nav_link(BASE_URL . '/menu.php', 'Menu', $linkClass) .
         nav_link(BASE_URL . '/contact.php', 'Contact', $linkClass);
 }
 
-function checkbox (string $name, string $value, array $data): string
+function checkbox(string $name, string $value, array $data): string
 {
     $attribute = '';
     if (isset($data[$name]) && in_array($value, $data[$name])) {
@@ -30,7 +30,7 @@ function checkbox (string $name, string $value, array $data): string
     <input type="checkbox" name="{$name}[]" value="$value">
 HTML;
 }
-function radio (string $name, string $value, array $data): string
+function radio(string $name, string $value, array $data): string
 {
     $attribute = '';
     if (isset($data[$name]) && $value === $data[$name]) {
@@ -40,7 +40,8 @@ function radio (string $name, string $value, array $data): string
     <input type="radio" name="{$name}" value="$value">
 HTML;
 }
-function select (string $name, $value, array $options): string {
+function select(string $name, $value, array $options): string
+{
     $html_options = [];
     foreach ($options as $k => $option) {
         $attributes = $k == $value ? ' selected' : '';
@@ -48,23 +49,25 @@ function select (string $name, $value, array $options): string {
     }
     return "<select class='form-control' name='$name'>" . implode($html_options) . '</select>';
 }
-function dump($variable) {
+function dump($variable)
+{
     echo '<pre>';
     var_dump($variable);
     echo '</pre>';
 }
-function slots_html (array $slots) {
+function slots_html(array $slots)
+{
     if (empty($slots)) {
         return 'Close';
     }
     $sentences = [];
-    foreach($slots as $slot) {
+    foreach ($slots as $slot) {
         $sentences[] = "<strong>{$slot[0]}h</strong> to <strong>{$slot[1]}h</strong>";
     }
     //dump($sentences);
     return 'Open from ' . implode(' and ', $sentences);
 }
-function in_slots (int $hour, array $slots): bool 
+function in_slots(int $hour, array $slots): bool
 {
     foreach ($slots as $slot) {
         $start = $slot[0];
