@@ -17,4 +17,10 @@ class Slot
     {
         return $hour >= $this->start && $hour <= $this->end;
     }
+
+    public function junction(Slot $slot): bool
+    {
+        return $this->includesHour($slot->start) || $this->includesHour($slot->end) ||
+            ($this->start < $slot->start && $this->end > $slot->end);
+    }
 }
