@@ -2,7 +2,8 @@
 
 class Counter
 {
-    public $file;
+    const INCREMENT = 1;
+    protected $file;
 
     public function __construct(string $file)
     {
@@ -14,7 +15,7 @@ class Counter
         $counter = 1;
         if (file_exists($this->file)) {
             $counter = (int)file_get_contents($this->file);
-            $counter++;
+            $counter += self::INCREMENT;
         }
         file_put_contents($this->file, $counter);
     }
