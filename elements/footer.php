@@ -9,9 +9,9 @@
     require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Counter.php';
     $counter = new Counter(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter');
     $counter->increment();
-    //$views = $counter->get();
+    $views = $counter->get();
     ?>
-    There is <?= number_view() ?> view<?php if ($views > 1) : ?>s<?php endif; ?> on the site
+    There is <?= $views ?> view<?php if ($views > 1) : ?>s<?php endif; ?> on the site
   </div>
   <div class="col-md-4">
     <form action="/newsletter.php" method="post" class="form-inline">
