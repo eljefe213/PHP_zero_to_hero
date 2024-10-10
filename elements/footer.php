@@ -6,9 +6,10 @@
 <div class="row">
   <div class="col-md-4">
     <?php
-    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'counter.php';
-    add_view();
-    $views = number_view();
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Counter.php';
+    $counter = new Counter(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter');
+    $counter->increment();
+    //$views = $counter->get();
     ?>
     There is <?= number_view() ?> view<?php if ($views > 1) : ?>s<?php endif; ?> on the site
   </div>
