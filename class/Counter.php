@@ -18,4 +18,12 @@ class Counter
         }
         file_put_contents($this->file, $counter);
     }
+
+    public function get(): int
+    {
+        if (!file_exists($this->file)) {
+            return 0;
+        }
+        return (int)file_get_contents($this->file);
+    }
 }
