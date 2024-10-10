@@ -6,8 +6,8 @@
 <div class="row">
   <div class="col-md-4">
     <?php
-    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'Counter.php';
-    $counter = new Counter(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter');
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'DoubleCounter.php';
+    $counter = new DoubleCounter(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'counter');
     $counter->increment();
     $views = $counter->get();
     ?>
